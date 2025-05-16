@@ -1,37 +1,98 @@
-
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Sumoverse | Civil Engineering & Digital Creativity</title>
-    <link rel="stylesheet" href="landing.css">
+    <title>Sumoverse | Bridging the Physical and Digital Worlds</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
 <body>
-    <div class="particle-container" id="particles"></div>
+    <div class="cosmos-background">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="clouds"></div>
+        <div class="grid-overlay"></div>
+    </div>
     
-    <div class="theme-toggle">
-        <input type="checkbox" id="theme-toggle-checkbox">
-        <label for="theme-toggle-checkbox" class="toggle-label">
-            <i class="fas fa-moon"></i>
-            <i class="fas fa-sun"></i>
+    <div class="universe-toggle">
+        <input type="checkbox" id="universe-toggle-checkbox">
+        <label for="universe-toggle-checkbox" class="toggle-label">
+            <span class="civil">Civil</span>
+            <span class="digital">Digital</span>
             <div class="toggle-ball"></div>
         </label>
     </div>
-
+    
     <div class="landing-container">
         <div class="orb-container">
-            <div class="orb">
-                <div class="skill-tag" style="--rotation: 0deg">AutoCAD</div>
-                <div class="skill-tag" style="--rotation: 60deg">UI/UX</div>
-                <div class="skill-tag" style="--rotation: 120deg">Data Science</div>
-                <div class="skill-tag" style="--rotation: 180deg">Structural Design</div>
-                <div class="skill-tag" style="--rotation: 240deg">3D Modeling</div>
-                <div class="skill-tag" style="--rotation: 300deg">Python</div>
+            <div id="three-container"></div>
+            <div class="skill-tags">
+                <div class="skill-tag" data-skill="AutoCAD" style="--delay: 0s">
+                    <span>AutoCAD</span>
+                    <div class="skill-detail">
+                        <h4>AutoCAD</h4>
+                        <p>Advanced proficiency in 2D/3D modeling for structural design</p>
+                        <div class="skill-level">
+                            <div class="level" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-tag" data-skill="UI/UX" style="--delay: 0.2s">
+                    <span>UI/UX</span>
+                    <div class="skill-detail">
+                        <h4>UI/UX Design</h4>
+                        <p>Creating intuitive interfaces with focus on user experience</p>
+                        <div class="skill-level">
+                            <div class="level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-tag" data-skill="Data Science" style="--delay: 0.4s">
+                    <span>Data Science</span>
+                    <div class="skill-detail">
+                        <h4>Data Science</h4>
+                        <p>Statistical analysis and machine learning for engineering insights</p>
+                        <div class="skill-level">
+                            <div class="level" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-tag" data-skill="Structural Design" style="--delay: 0.6s">
+                    <span>Structural Design</span>
+                    <div class="skill-detail">
+                        <h4>Structural Design</h4>
+                        <p>Expertise in designing resilient civil engineering structures</p>
+                        <div class="skill-level">
+                            <div class="level" style="width: 98%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-tag" data-skill="3D Modeling" style="--delay: 0.8s">
+                    <span>3D Modeling</span>
+                    <div class="skill-detail">
+                        <h4>3D Modeling</h4>
+                        <p>Creating detailed 3D visualizations for engineering projects</p>
+                        <div class="skill-level">
+                            <div class="level" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-tag" data-skill="Python" style="--delay: 1s">
+                    <span>Python</span>
+                    <div class="skill-detail">
+                        <h4>Python</h4>
+                        <p>Building automation tools and data analysis pipelines</p>
+                        <div class="skill-level">
+                            <div class="level" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -40,23 +101,59 @@
                 <span>SUMO</span>VERSE
             </div>
             
-            <h1>Exploring the Sumoverse</h1>
-            <h2>Where Civil Engineering Meets Digital Creativity</h2>
+            <h1>Bridging the Physical and Digital Worlds</h1>
+            <h2>Civil Engineering × Data Science × Digital Creativity</h2>
+            
+            <div class="intro-text">
+                <p>Exploring the intersection of structural design and computational innovation to create solutions that transcend traditional boundaries.</p>
+            </div>
+            
+            <div class="voice-intro">
+                <button id="voice-intro-btn">
+                    <i class="fas fa-volume-up"></i>
+                    <span>Press to hear my story</span>
+                </button>
+            </div>
             
             <div class="cta-buttons">
-                <a href="main.html" class="btn-primary">Enter Portfolio</a>
-                <a href="contact.html" class="btn-secondary">Contact Me</a>
+                <a href="portfolio.html" class="btn-primary">
+                    <span>Explore Portfolio</span>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="contact.html" class="btn-secondary">
+                    <span>Contact Me</span>
+                    <div class="wormhole"></div>
+                </a>
+            </div>
+            
+            <div class="ar-experience">
+                <button id="ar-btn">
+                    <i class="fas fa-cube"></i>
+                    <span>Experience in AR</span>
+                </button>
             </div>
             
             <div class="social-links">
-                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                    <div class="icon-orbit"></div>
+                </a>
+                <a href="#" class="social-icon" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                    <div class="icon-orbit"></div>
+                </a>
+                <a href="#" class="social-icon" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                    <div class="icon-orbit"></div>
+                </a>
+                <a href="#" class="social-icon" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                    <div class="icon-orbit"></div>
+                </a>
             </div>
         </div>
     </div>
 
-    <script src="landing.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
