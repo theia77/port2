@@ -1,159 +1,194 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumoverse | Bridging the Physical and Digital Worlds</title>
+    <title>Sumoverse | Bridging Concrete and Code</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
-<body>
-    <div class="cosmos-background">
-        <div class="stars"></div>
-        <div class="twinkling"></div>
-        <div class="clouds"></div>
-        <div class="grid-overlay"></div>
-    </div>
-    
-    <div class="universe-toggle">
-        <input type="checkbox" id="universe-toggle-checkbox">
-        <label for="universe-toggle-checkbox" class="toggle-label">
-            <span class="civil">Civil</span>
-            <span class="digital">Digital</span>
-            <div class="toggle-ball"></div>
+<body class="dark-mode">
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <span class="toggle-label">Civil Engineering</span>
+        <label class="switch">
+            <input type="checkbox" id="theme-switch">
+            <span class="slider"></span>
         </label>
-    </div>
-    
-    <div class="landing-container">
-        <div class="orb-container">
-            <div id="three-container"></div>
-            <div class="skill-tags">
-                <div class="skill-tag" data-skill="AutoCAD" style="--delay: 0s">
-                    <span>AutoCAD</span>
-                    <div class="skill-detail">
-                        <h4>AutoCAD</h4>
-                        <p>Advanced proficiency in 2D/3D modeling for structural design</p>
-                        <div class="skill-level">
-                            <div class="level" style="width: 95%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-tag" data-skill="UI/UX" style="--delay: 0.2s">
-                    <span>UI/UX</span>
-                    <div class="skill-detail">
-                        <h4>UI/UX Design</h4>
-                        <p>Creating intuitive interfaces with focus on user experience</p>
-                        <div class="skill-level">
-                            <div class="level" style="width: 85%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-tag" data-skill="Data Science" style="--delay: 0.4s">
-                    <span>Data Science</span>
-                    <div class="skill-detail">
-                        <h4>Data Science</h4>
-                        <p>Statistical analysis and machine learning for engineering insights</p>
-                        <div class="skill-level">
-                            <div class="level" style="width: 90%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-tag" data-skill="Structural Design" style="--delay: 0.6s">
-                    <span>Structural Design</span>
-                    <div class="skill-detail">
-                        <h4>Structural Design</h4>
-                        <p>Expertise in designing resilient civil engineering structures</p>
-                        <div class="skill-level">
-                            <div class="level" style="width: 98%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-tag" data-skill="3D Modeling" style="--delay: 0.8s">
-                    <span>3D Modeling</span>
-                    <div class="skill-detail">
-                        <h4>3D Modeling</h4>
-                        <p>Creating detailed 3D visualizations for engineering projects</p>
-                        <div class="skill-level">
-                            <div class="level" style="width: 92%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-tag" data-skill="Python" style="--delay: 1s">
-                    <span>Python</span>
-                    <div class="skill-detail">
-                        <h4>Python</h4>
-                        <p>Building automation tools and data analysis pipelines</p>
-                        <div class="skill-level">
-                            <div class="level" style="width: 88%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="content">
-            <div class="logo">
-                <span>SUMO</span>VERSE
-            </div>
-            
-            <h1>Bridging the Physical and Digital Worlds</h1>
-            <h2>Civil Engineering × Data Science × Digital Creativity</h2>
-            
-            <div class="intro-text">
-                <p>Exploring the intersection of structural design and computational innovation to create solutions that transcend traditional boundaries.</p>
-            </div>
-            
-            <div class="voice-intro">
-                <button id="voice-intro-btn">
-                    <i class="fas fa-volume-up"></i>
-                    <span>Press to hear my story</span>
-                </button>
-            </div>
-            
-            <div class="cta-buttons">
-                <a href="portfolio.html" class="btn-primary">
-                    <span>Explore Portfolio</span>
-                    <div class="btn-glow"></div>
-                </a>
-                <a href="contact.html" class="btn-secondary">
-                    <span>Contact Me</span>
-                    <div class="wormhole"></div>
-                </a>
-            </div>
-            
-            <div class="ar-experience">
-                <button id="ar-btn">
-                    <i class="fas fa-cube"></i>
-                    <span>Experience in AR</span>
-                </button>
-            </div>
-            
-            <div class="social-links">
-                <a href="#" class="social-icon" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                    <div class="icon-orbit"></div>
-                </a>
-                <a href="#" class="social-icon" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                    <div class="icon-orbit"></div>
-                </a>
-                <a href="#" class="social-icon" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
-                    <div class="icon-orbit"></div>
-                </a>
-                <a href="#" class="social-icon" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                    <div class="icon-orbit"></div>
-                </a>
-            </div>
-        </div>
+        <span class="toggle-label">Digital Universe</span>
     </div>
 
-    <script src="scripts.js"></script>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="orb-container">
+            <canvas id="orb-canvas"></canvas>
+            <div class="skill-tags">
+                <span class="tag" data-delay="0">AutoCAD</span>
+                <span class="tag" data-delay="0.2">UI/UX</span>
+                <span class="tag" data-delay="0.4">Data Science</span>
+                <span class="tag" data-delay="0.6">Civil Engineering</span>
+                <span class="tag" data-delay="0.8">Python</span>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Exploring the <span class="highlight">Sumoverse</span></h1>
+            <p class="tagline">Bridging Concrete and Code</p>
+            <p class="subtitle">Civil Engineer × Digital Creator</p>
+            <button class="cta-button">Explore My Work</button>
+        </div>
+    </section>
+
+    <!-- Interactive Timeline -->
+    <section class="timeline-section">
+        <h2>My Journey</h2>
+        <div class="timeline-container">
+            <div class="timeline-track" id="timeline-track">
+                <div class="timeline-item">
+                    <div class="timeline-icon education"></div>
+                    <div class="timeline-content">
+                        <h3>Dual Degrees</h3>
+                        <p>BS Data Science + Civil Engineering</p>
+                        <span class="timeline-date">2021</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon cad"></div>
+                    <div class="timeline-content">
+                        <h3>AutoCAD Mastery</h3>
+                        <p>Designed 3D infrastructure models</p>
+                        <span class="timeline-date">2022</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon uiux"></div>
+                    <div class="timeline-content">
+                        <h3>UI/UX Design</h3>
+                        <p>Created interfaces for engineering applications</p>
+                        <span class="timeline-date">2023</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon data"></div>
+                    <div class="timeline-content">
+                        <h3>Data Science Projects</h3>
+                        <p>Analyzing structural integrity with ML</p>
+                        <span class="timeline-date">2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skill Constellations -->
+    <section class="skills-section">
+        <h2>Skill Constellations</h2>
+        <div id="starfield-container">
+            <canvas id="starfield"></canvas>
+            <div class="skill-popup" id="skill-popup">
+                <h3 id="popup-title">Skill Name</h3>
+                <p id="popup-description">Skill description goes here</p>
+                <span class="close-popup">×</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biomechanical Art Section -->
+    <section class="biomech-section">
+        <h2>Where Worlds Collide</h2>
+        <div class="biomech-container">
+            <div class="civil-side">
+                <div class="parallax-item" data-depth="0.2"></div>
+                <div class="parallax-item" data-depth="0.4"></div>
+                <div class="parallax-item" data-depth="0.6"></div>
+            </div>
+            <div class="digital-side">
+                <div class="parallax-item" data-depth="0.3"></div>
+                <div class="parallax-item" data-depth="0.5"></div>
+                <div class="parallax-item" data-depth="0.7"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Cards -->
+    <section class="projects-section">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card" data-category="cad">
+                <div class="card-content">
+                    <h3>Bridge Design Optimization</h3>
+                    <p>Parametric design for sustainable infrastructure</p>
+                    <div class="card-tags">
+                        <span>CAD Design</span>
+                        <span>Civil Engineering</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="uiux">
+                <div class="card-content">
+                    <h3>Construction Management Dashboard</h3>
+                    <p>Real-time monitoring interface for project managers</p>
+                    <div class="card-tags">
+                        <span>UI/UX</span>
+                        <span>Dashboard</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="data">
+                <div class="card-content">
+                    <h3>Structural Analysis ML Model</h3>
+                    <p>Predicting maintenance needs using sensor data</p>
+                    <div class="card-tags">
+                        <span>Data Analysis</span>
+                        <span>Machine Learning</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="mixed">
+                <div class="card-content">
+                    <h3>AR Building Inspector</h3>
+                    <p>Augmented reality tool for on-site structural assessment</p>
+                    <div class="card-tags">
+                        <span>AR/VR</span>
+                        <span>Mobile App</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AR Easter Egg -->
+    <div class="ar-button" id="ar-button">
+        <span>View Sumoverse in AR</span>
+    </div>
+
+    <!-- Contact Wormhole -->
+    <section class="contact-section">
+        <h2>Contact Me</h2>
+        <div class="wormhole-container">
+            <svg id="wormhole" viewBox="0 0 500 500">
+                <circle class="wormhole-ring" cx="250" cy="250" r="200"></circle>
+                <circle class="wormhole-ring" cx="250" cy="250" r="180"></circle>
+                <circle class="wormhole-ring" cx="250" cy="250" r="160"></circle>
+                <circle class="wormhole-ring" cx="250" cy="250" r="140"></circle>
+                <circle class="wormhole-ring" cx="250" cy="250" r="120"></circle>
+            </svg>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sumoverse. Bridging Concrete and Code.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
